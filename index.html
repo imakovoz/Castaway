@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Castaway</title>
+    <link rel="stylesheet" href="./assets/style/reset.css">
+    <link rel="stylesheet" href="./assets/style/master.css">
+  </head>
+  <body>
+    <main id="main-wrapper">
+      <video width="100%" height="100%" id="background-vid" autoplay loop>
+        <source src="./assets/images/water-background.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+      <section id="content-wrapper">
+        <aside id="sidebar">
+          <h1>Castaway</h1>
+          <h3 id="life">Life</h3>
+        </aside>
+        <div id="game">
+          <div id="top-game">
+            <div id="stage">
+            </div>
+            <div class="card-holder">
+              <aside id="age-aside">
+              </aside>
+              <div id="age">
+              </div>
+            </div>
+            <div id="goal">
+            </div>
+          </div>
+          <div id="bottom-game">
+            <div class="card-holder">
+              <aside id="hazard-aside">
+                <span id="hazard-stage" style="background-color:green"></span>
+                <span id="hazard-stage" style="background-color:yellow"></span>
+                <span id="hazard-stage" style="background-color:red"></span>
+              </aside>
+              <div id="hazard">
+              </div>
+            </div>
+            <span id="main-game" />
+            </span>
+            <div class="card-holder">
+              <div id="abilities">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="text/javascript" src="./dist/bundle.js"></script>
+  </body>
+</html>
