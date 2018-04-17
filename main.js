@@ -43,18 +43,21 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
   const hazards = game.drawHazards();
   let switcher = document.createElement('img');
+  let checkbox = document.createElement('input');
   switcher.src = './assets/images/switch.png';
+  checkbox.setAttribute('type', 'checkbox');
 
   let card1 = document.createElement('div');
   let card1body = createCard.createHazard(hazards[0], game.level);
   let aside1 = document.createElement('aside');
 
   card1.className = 'card-holder';
-  card1.id = 'hazard-side';
+  card1.id = 'hazard-side-1';
   aside1.id = 'card1-aside';
 
   switcher.id = 'switch-1';
   aside1.innerHTML += switcher.outerHTML;
+  aside1.innerHTML += checkbox.outerHTML;
   card1.innerHTML += aside1.outerHTML;
   card1.innerHTML += card1body.outerHTML;
   game_node.innerHTML += card1.outerHTML;
@@ -64,19 +67,54 @@ document.addEventListener('DOMContentLoaded', function(event) {
   let aside2 = document.createElement('aside');
 
   card2.className = 'card-holder';
-  card2.id = 'hazard-side';
+  card2.id = 'hazard-side-2';
   aside2.id = 'card2-aside';
 
   switcher.id = 'switch-2';
   aside2.innerHTML += switcher.outerHTML;
+  aside2.innerHTML += checkbox.outerHTML;
   card2.innerHTML += aside2.outerHTML;
   card2.innerHTML += card2body.outerHTML;
   game_node.innerHTML += card2.outerHTML;
 
+  $('#switch-1').data('card', hazards[0]);
+  $('#switch-1').data('level', game.level);
+  $('#switch-2').data('card', hazards[1]);
+  $('#switch-2').data('level', game.level);
+
   document.querySelector('#switch-1').addEventListener('click', e => {
-    console.log(e);
+    flip_card(e);
   });
   document.querySelector('#switch-2').addEventListener('click', e => {
-    console.log(e.path[0].id.split('-')[1]);
+    flip_card(e);
   });
 });
+const flip_card = e => {
+  let newCard = null;
+  const hazard = $(`#switch-${e.path[0].id.split('-')[1]}`).data('card');
+  const level = $(`#switch-${e.path[0].id.split('-')[1]}`).data('level');
+  console.log(hazard);
+  let card_node =
+    document.querySelector(`#hazard-side-${e.path[0].id.split('-')[1]}`) ||
+    document.querySelector(`#ability-side-${e.path[0].id.split('-')[1]}`);
+  $(`#hazard-side-${e.path[0].id.split('-')[1]} div`).remove();
+  $(`#ability-side-${e.path[0].id.split('-')[1]} div`).remove();
+  if (card_node.id.split('-')[0] === 'hazard') {
+    newCard = createCard.createAbility(hazard, level);
+    card_node.id = `ability-side-${e.path[0].id.split('-')[1]}`;
+  } else {
+    newCard = createCard.createHazard(hazard, level);
+    card_node.id = `hazard-side-${e.path[0].id.split('-')[1]}`;
+  }
+  card_node.innerHTML += newCard.outerHTML;
+  const switchx = document.querySelector(
+    `#switch-${e.path[0].id.split('-')[1]}`
+  );
+  $(`#switch-${e.path[0].id.split('-')[1]}`).data('card', hazard);
+  $(`#switch-${e.path[0].id.split('-')[1]}`).data('level', level);
+  document
+    .querySelector(`#switch-${e.path[0].id.split('-')[1]}`)
+    .addEventListener('click', e => {
+      flip_card(e);
+    });
+};
