@@ -52,6 +52,7 @@ video {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
   padding: 10px;
   background-color: purple;
   box-sizing: border-box;
@@ -123,7 +124,7 @@ img {
 
 .card {
   width: 100px;
-  height: 100%;
+  height: 125px;
 }
 
 #card-body {
@@ -204,4 +205,20 @@ input[type='checkbox'] {
 }
 input[type='checkbox']:checked {
   background: blue;
+}
+
+#fight-div {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 100%;
+}
+
+#draw-div,
+#hazard-div,
+#push-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
