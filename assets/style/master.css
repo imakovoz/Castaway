@@ -166,10 +166,34 @@ img {
   width: 394px;
   height: 100%;
   display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#selection-div {
+  width: 100%;
+  display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
 }
+
+#confirm-div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#confirm-btn {
+  padding: 5px 20px;
+  background-color: gray;
+  cursor: not-allowed;
+  color: #4c4c4c;
+  border-radius: 5px;
+  border: 1px solid #4c4c4c;
+}
+
 input[type='checkbox'] {
   -webkit-appearance: none;
   width: 30px;
