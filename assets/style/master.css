@@ -4,6 +4,11 @@ body {
   height: 100vh;
 }
 
+h1 {
+  font-family: 'Berkshire Swash', cursive;
+  font-size: 24px;
+}
+
 #main-wrapper {
   position: relative;
   height: 100vh;
@@ -18,7 +23,7 @@ video {
 }
 
 #background {
-  background-image: url('../images/island1.png');
+  background-image: url('../images/island2.png');
   background-size: 100% 100%;
   position: absolute;
   width: 100%;
@@ -42,7 +47,7 @@ video {
 }
 
 #sidebar {
-  width: 20%;
+  width: 15%;
   height: auto;
   margin: 20px 0 20px 20px;
   padding: 40px;
@@ -52,15 +57,26 @@ video {
   justify-content: center;
 }
 
-#sidebar div {
-  background-color: white;
+#sidebar > div {
+  background-image: url('../images/plank.png');
+  background-size: 100% 100%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+}
+
+#sidebar > div > * {
+  margin: 5px;
 }
 
 #game {
-  width: calc(80% - 20px);
+  width: calc(85% - 20px);
   background-color: transparent;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   position: relative;
 }
 
@@ -96,16 +112,30 @@ video {
   background-image: url('../images/leather.jpg');
   background-size: 100% 100%;
   box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.card-delete {
+  border-radius: 5px;
+}
+
+#hazard,
+#abilities {
+  line-height: 170px;
+  text-align: center;
+  vertical-align: middle;
 }
 
 #hazard-card {
-  background-image: url('../images/hazard.jpg');
-  background-size: cover;
+  background-color: #af360e;
+  /* background-image: url('../images/hazard.jpg');
+  background-size: cover; */
 }
 
 #ability-card {
-  background-image: url('../images/ability.jpg');
-  background-size: cover;
+  background-color: #18964e;
+  /* background-image: url('../images/ability.jpg');
+  background-size: cover; */
 }
 
 .card-holder aside {
@@ -129,43 +159,45 @@ video {
   height: 170px;
   border: 1px solid white;
   padding: 2px;
-}
-
-#top-game {
-  height: 33%;
-  padding: 10px;
-  box-sizing: border-box;
-  background-color: transparent;
-  /* background-image: url('../images/sand.jpg'); */
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-}
-
-#bottom-game {
-  height: 67%;
-  padding: 10px;
-  box-sizing: border-box;
-  background-color: transparent;
-  /* background-image: url('../images/sand.jpg'); */
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-}
-
-#top-game > * {
   border-radius: 5px;
 }
 
-#bottom-game > * {
+#left-game {
+  height: 100%;
+  width: 220px;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#right-game {
+  height: 100%;
+  width: 220px;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: transparent;
+  /* background-image: url('../images/sand.jpg'); */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#left-game > * {
+  border-radius: 5px;
+}
+
+#right-game > * {
   border-radius: 5px;
 }
 
 #stage {
-  width: 20%;
-  height: 50%;
+  width: 80%;
+  height: 20px;
   background-color: black;
 }
 
@@ -199,8 +231,8 @@ img {
 }
 
 #goal {
-  width: 20%;
-  height: 50%;
+  width: 200px;
+  height: 100px;
   background-image: url('../images/pirate-background.jpg');
   background-size: 100% 150%;
 }
@@ -219,9 +251,9 @@ img {
   border-radius: 50%;
 }
 #main-game {
-  width: 500px;
   height: 100%;
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
@@ -242,12 +274,20 @@ img {
 }
 
 #confirm-btn {
-  padding: 5px 20px;
-  background-color: gray;
+  padding: 30px 20px;
+  background-size: 100% 100%;
   cursor: not-allowed;
   color: #4c4c4c;
   border-radius: 5px;
-  border: 1px solid #4c4c4c;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.confirm-yes {
+  background-image: url('../images/chest.png');
+}
+
+.confirm-not {
+  background-image: url('../images/chest-not.png');
 }
 
 input[type='checkbox'] {
@@ -274,13 +314,28 @@ input[type='checkbox']:checked {
 #fight-disp {
   width: 100%;
   height: 100px;
-  background-color: white;
+  background-image: url('../images/plank.png');
+  background-size: 100% 100%;
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#powers-disp {
+  width: 100%;
+  display: flex;
+  height: auto;
+  background-color: yellow;
+}
+
+#hazard-div > * {
+  margin: 20px 0;
 }
 
 #hazard-div {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   flex-direction: column;
   height: 100%;
   width: 150px;
@@ -303,10 +358,13 @@ input[type='checkbox']:checked {
 }
 
 #resolve-fight {
-  width: 80%;
+  width: 100%;
   box-sizing: border-box;
-  padding: 7px;
-  background-color: blue;
+  padding: 7px 0px 7px 30px;
+  background-image: url('../images/sword.png');
+  background-size: 100% 100%;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  line-height: 30px;
   color: white;
   border-radius: 5px;
   margin: 0 auto;
