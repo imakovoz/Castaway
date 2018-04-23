@@ -326,6 +326,7 @@ input[type='checkbox']:checked {
   width: 100%;
   display: flex;
   height: auto;
+  flex-direction: column;
 }
 
 #powers-disp > div {
@@ -350,10 +351,9 @@ input[type='checkbox']:checked {
   border: 1px ridge white;
   display: flex;
   width: 22px;
-  height: 22px;
+  height: 24px;
   background-image: url('../images/stone.jpg');
   background-size: 100% 100%;
-  height: 100%;
   box-sizing: border-box;
   text-align: center;
   vertical-align: middle;
@@ -367,7 +367,7 @@ input[type='checkbox']:checked {
   width: 22px;
   background-image: url('../images/stone-gem.jpg');
   background-size: 100% 100%;
-  height: 100%;
+  height: 24px;
   box-sizing: border-box;
   justify-content: center;
   align-items: center;
@@ -440,14 +440,16 @@ input[type='checkbox']:checked {
 #card-selection {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   margin: 10px 0;
+  flex-wrap: wrap;
 }
 
 #card-selection > * {
   margin: 0 10px;
   border: transparent solid 2px;
   cursor: pointer;
+  margin: 5px 5px;
 }
 
 #card-selection > *:hover {
