@@ -85,6 +85,7 @@ video {
   background-size: cover;
   box-sizing: border-box;
   border: 2px solid white;
+  height: 20px;
 }
 
 .yellow {
@@ -92,12 +93,14 @@ video {
   background-size: cover;
   box-sizing: border-box;
   border: 2px solid white;
+  height: 20px;
 }
 
 .green {
   background-image: url('../images/green.jpg');
   background-size: cover;
   box-sizing: border-box;
+  height: 20px;
 }
 
 .card-holder {
@@ -150,6 +153,7 @@ video {
 .card-holder aside img {
   width: 100%;
   height: auto;
+  cursor: pointer;
 
   box-sizing: border-box;
 }
@@ -197,7 +201,6 @@ video {
 
 #stage {
   width: 80%;
-  height: 20px;
   background-color: black;
 }
 
@@ -292,6 +295,7 @@ img {
 }
 
 input[type='checkbox'] {
+  cursor: pointer;
   -webkit-appearance: none;
   width: 30px;
   height: 30px;
@@ -485,4 +489,89 @@ input[type='checkbox']:checked {
   width: 78px;
   word-wrap: break-word;
   text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+#helpModal {
+  background-color: white;
+  width: 50%;
+  /* height: 50%; */
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+}
+
+#helpModal > * {
+  margin: 15px 0;
+}
+
+#helpModal-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+#helpModal-basic,
+#helpModal-powers {
+  line-height: 30px;
+  padding: 5px;
+  background-color: white;
+  border: 1px solid black;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#helpModal-returnDiv {
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  background-image: url('../images/return.png');
+  background-size: 100% 100%;
+  left: 5%;
+  top: 20px;
+  cursor: pointer;
+}
+
+#startGame {
+  padding: 5px 15px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#mainNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+#help {
+  background-image: url('../images/help.png');
+  background-size: 100% 100%;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+#music {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.musicOn {
+  background-image: url('../images/musicon.png');
+  background-size: 100% 100%;
+}
+
+.musicOff {
+  background-image: url('../images/musicoff.png');
+  background-size: 100% 100%;
 }
