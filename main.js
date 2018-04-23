@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
   document.querySelector('audio').muted = true;
   helpModal.helpModal();
   const mainGame = document.querySelector('#main-game');
-  let startGame = document.createElement('div');
+  let startGame = document.createElement('h2');
   startGame.id = 'startGame';
   startGame.textContent = 'Start Game?';
   mainGame.innerHTML += startGame.outerHTML;
