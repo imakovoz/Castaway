@@ -28,6 +28,10 @@ document.addEventListener('DOMContentLoaded', function(event) {
     const game = new Game();
     $('#game').data('game', game);
     setup.setup(game);
+    let pirate = createCard.createPirate(game.goals[0]);
+    document.querySelector('#goal').innerHTML = pirate.outerHTML;
+    pirate = createCard.createPirate(game.goals[1]);
+    document.querySelector('#goal').innerHTML += pirate.outerHTML;
     const hazards = game.drawHazards();
     chooseHazard.chooseHazard(hazards, game);
   });

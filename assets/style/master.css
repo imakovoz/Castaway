@@ -240,10 +240,22 @@ img {
 
 #goal {
   width: 200px;
-  height: 100px;
-  margin: 55px 0;
+  height: 210px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#noGoal {
   background-image: url('../images/pirate-background.jpg');
   background-size: 100% 150%;
+}
+
+#goal > div {
+  width: 100%;
+  height: 100px;
+  border-radius: 5px;
 }
 
 #hazard-aside {
@@ -550,6 +562,10 @@ input[type='checkbox']:checked {
   cursor: pointer;
 }
 
+#startGame:hover {
+  background-color: #bababa;
+}
+
 #mainNav {
   display: flex;
   flex-direction: row;
@@ -583,4 +599,38 @@ input[type='checkbox']:checked {
 
 strong {
   font-weight: 700;
+}
+
+.pirate {
+  width: 100%;
+  height: 100px;
+  background-image: url('../images/pirates.jpg');
+  background-size: 100% 100%;
+  border-radius: 5px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.pirate > * {
+  margin: 5px;
+  width: 37px;
+  height: 37px;
+  background-color: #602403;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 37px;
+}
+
+.pirate > * > * {
+  position: absolute;
+}
+
+.pirate > * > *:first-child {
+  z-index: 1;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
