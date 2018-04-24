@@ -39,9 +39,9 @@ video {
   position: absolute;
   top: 50px;
   /* top: calc((100vh - 500px) / 2); */
-  left: calc((100vw - 1200px) / 2);
+  left: calc((100vw - 1350px) / 2);
   height: 600px;
-  width: 1200px;
+  width: 1300px;
   z-index: 2;
   background-color: transparent;
 
@@ -52,10 +52,10 @@ video {
 }
 
 #sidebar {
-  width: 15%;
+  width: 12%;
   height: auto;
   margin: 20px 0 20px 20px;
-  padding: 40px;
+  padding: 20px;
   background-color: transparent;
   display: flex;
   flex-direction: column;
@@ -65,7 +65,7 @@ video {
 #sidebar > div {
   background-image: url('../images/plank.png');
   background-size: 100% 100%;
-  padding: 30px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -78,7 +78,7 @@ video {
 }
 
 #game {
-  width: calc(85% - 20px);
+  flex-grow: 1;
   background-color: transparent;
   display: flex;
   flex-direction: row;
@@ -170,6 +170,10 @@ video {
   padding: 2px;
   border-radius: 5px;
   cursor: default;
+}
+
+.card > img {
+  border-radius: 3px;
 }
 
 #left-game {
