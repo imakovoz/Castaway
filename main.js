@@ -5,8 +5,17 @@ const setup = require('./lib/setup.js');
 const helpModal = require('./lib/helpModal.js');
 
 document.addEventListener('DOMContentLoaded', function(event) {
-  document.querySelector('audio').muted = true;
-  helpModal.helpModal();
+  const audio = document.querySelector('audio');
+  audio.muted = true;
+  audio.addEventListener(
+    'ended',
+    () => {
+      this.currentTime = 0;
+      this.play();
+    },
+    false
+  );
+  // helpModal.helpModal();
   const mainGame = document.querySelector('#main-game');
   let startGame = document.createElement('h2');
   startGame.id = 'startGame';

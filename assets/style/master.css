@@ -169,6 +169,7 @@ video {
   border: 1px solid white;
   padding: 2px;
   border-radius: 5px;
+  cursor: default;
 }
 
 #left-game {
@@ -611,6 +612,7 @@ strong {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  cursor: default;
 }
 
 .pirate > * {
@@ -633,4 +635,11 @@ strong {
 .pirate > * > *:first-child {
   z-index: 1;
   text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+#modal-confirm-btn {
+  padding: 10px 20px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
 }
