@@ -89,7 +89,6 @@ video {
   background-image: url('../images/red.jpg');
   background-size: cover;
   box-sizing: border-box;
-  border: 2px solid white;
   height: 20px;
 }
 
@@ -97,7 +96,6 @@ video {
   background-image: url('../images/yellow.jpg');
   background-size: cover;
   box-sizing: border-box;
-  border: 2px solid white;
   height: 20px;
 }
 
@@ -646,4 +644,10 @@ strong {
   background-color: white;
   border: 1px solid black;
   border-radius: 5px;
+}
+
+#winGame,
+#loseGame {
+  padding: 30px 50px;
+  font-size: 30px;
 }
