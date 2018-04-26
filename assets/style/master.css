@@ -537,6 +537,7 @@ input[type='checkbox']:checked {
 }
 
 #helpModal-basic,
+#helpModal-tutorial,
 #helpModal-powers {
   line-height: 30px;
   padding: 5px;
@@ -650,4 +651,16 @@ strong {
 #loseGame {
   padding: 30px 50px;
   font-size: 30px;
+}
+
+#instructions {
+  height: 100px;
+  width: 80%;
+  margin: 40px 0;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
