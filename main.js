@@ -5,6 +5,7 @@ const setup = require('./lib/setup.js');
 const helpModal = require('./lib/helpModal.js');
 
 document.addEventListener('DOMContentLoaded', function(event) {
+  $('#game').data('game', null);
   const audio = document.querySelector('audio');
   audio.muted = true;
   audio.addEventListener(
